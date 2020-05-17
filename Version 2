@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class Chocolate {
+	int customer,chocolates;
+	double cocoa_percent,milk_percent,fruit_percent,nuts_percent;
+	public Chocolate(int customer,int chocolates)
+	{
+		this.customer=customer;
+		this.chocolates=chocolates;
+	}
+	public Chocolate(double cocoa_percent,double milk_percent,double fruit_percent,double nuts_percent)
+	{
+		this.cocoa_percent=cocoa_percent;
+		this.milk_percent=milk_percent;
+		this.fruit_percent=fruit_percent;
+		this.nuts_percent=nuts_percent;
+		
+	}
+  	public int calculateChocolates()
+	{
+		int number_of_chocolates_per_customer=0;
+		if(customer <= 0)
+		{
+			System.out.println("chocolates can not be distributed since there are no customers or negative number of customer");
+		}
+		else
+		{
+			number_of_chocolates_per_customer=chocolates/customer;
+			System.out.println("every customer gets"+number_of_chocolates_per_customer+" chocolates");
+		}
+		return number_of_chocolates_per_customer;
+	}
+	public double Custom_Chocolate(double cocoa_percent, double milk_percent, double fruit_percent, double nuts_percent)
+	{
+		double chocolate_composition=0;
+		chocolate_composition= cocoa_percent+milk_percent+fruit_percent+nuts_percent;
+		if(chocolate_composition<=0|| chocolate_composition<(cocoa_percent+milk_percent+fruit_percent+nuts_percent))
+		{
+			System.out.println("No such chocolate can be prepared! Please try a different combination of ingredients.");
+		}
+		else 
+			System.out.println("A chocolate can be made with the given compostion of ingredients.");
+		return chocolate_composition;
+	}
+  	public static void main(String[] args)
+	{
+		Scanner in= new Scanner(System.in);
+		Chocolate c1= new Chocolate(5,15);
+		Chocolate c2= new Chocolate(25.0,25.0,25.0,25.0);
+    		int r1= c1.calculateChocolates();
+		double r2= c2.Custom_Chocolate(25.0, 25.0, 25.0, 25.0);
+    		System.out.println("Output for Method 1:"+r1+"\n");
+		System.out.println("Output for Method 2:"+r2+"\n");
+    		in.close();
+  	}
+}
