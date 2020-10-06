@@ -33,13 +33,13 @@ public class Chocolate {
 	{
 		double chocolate_composition=0;
 		chocolate_composition= cocoa_percent+milk_percent+fruit_percent+nuts_percent;
-		if(cocoa_percent>=60)
+		if(cocoa_percent>=60 && cocoa_percent<=100 )
 			System.out.println("It's a dark chocolate, suitable for adults and athletes/fitness freaks");
-		if(milk_percent>=60)
+		if(milk_percent>=60 && milk_percent<=100)
 			System.out.println("It's a milk chocolate, craved by children and teenagers");
-		if(fruit_percent>=60)
+		if(fruit_percent>=60 && fruit_percent<=100)
 			System.out.println("It's a fruit chcolate, sweet enough to be loved by everyone");
-		if(nuts_percent>=60)
+		if(nuts_percent>=60 && nuts_percent<=100)
 			System.out.println("It's a chocolate filled with nuts, serves as an ideal breakfast");
 		if(cocoa_percent==25 && milk_percent==25 && fruit_percent==25 && nuts_percent==25)
 			System.out.println("The ideal chocolate suited for people of all ages");
