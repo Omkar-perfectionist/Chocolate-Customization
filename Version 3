@@ -16,7 +16,7 @@ public class Chocolate {
 		
 	}
   	public int calculateChocolates()
-	{
+	{   try{
 		int number_of_chocolates_per_customer=0;
 		if(customer <= 0)
 		{
@@ -27,10 +27,12 @@ public class Chocolate {
 			number_of_chocolates_per_customer=chocolates/customer;
 			System.out.println("every customer gets"+number_of_chocolates_per_customer+" chocolates");
 		}
+		}
+		catch(Exception e){e.getMessage();}
 		return number_of_chocolates_per_customer;
 	}
 	public double Custom_Chocolate(double cocoa_percent, double milk_percent, double fruit_percent, double nuts_percent)
-	{
+	{     try{
 		double chocolate_composition=0;
 		chocolate_composition= cocoa_percent+milk_percent+fruit_percent+nuts_percent;
 		if(cocoa_percent>=60 && cocoa_percent<=100 )
@@ -49,6 +51,8 @@ public class Chocolate {
 		}
 		else 
 			System.out.println("A chocolate can be made with the given compostion of ingredients.");
+			}
+		catch(Exception e){e.getMessage();}	
 		return chocolate_composition;
 	}
   	public static void main(String[] args)
