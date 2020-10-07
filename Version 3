@@ -51,6 +51,38 @@ public class Chocolate {
 			System.out.println("A chocolate can be made with the given compostion of ingredients.");
 		return chocolate_composition;
 	}
+	public void delivery_Info(double total_amt,String address,String slot_option)
+	{
+	double delivery_charge=0;
+	if(total_amt >=0 && total_amt<500)
+	{
+	delivery_charge=50;
+	total_amt=total_amt+delivery_charge;
+	System.out.println("Your Total Amount is"+ total_amt);
+          }
+	else if(total_amt >=500)
+	{
+	delivery_charge=0;
+	total_amt=total_amt+delivery_charge;
+	System.out.println("Your Total Amount is"+ total_amt);
+	}
+	switch(slot_option)
+	{
+	case a: System.out.println("Delivery in between 7 to 7:30 AM");
+                break;
+	case b: System.out.println("Delivery in between 8 to 8:30 AM");
+                break;
+	case c: System.out.println("Delivery in between 9 to 12:00 PM");
+                break;
+	case d: System.out.println("Delivery in between 2 to 4:00 PM");
+                break;	
+        case e: System.out.println("Delivery in between 4:30 to 6:30 PM");
+                break;	
+        default: System.out.println("Please select a valid delivery slot option ");
+                break;
+	}
+	
+	}
   	public static void main(String[] args)
 	{
 		Scanner in= new Scanner(System.in);
@@ -58,6 +90,7 @@ public class Chocolate {
 		Chocolate c2= new Chocolate(25.0,25.0,25.0,25.0);
     		int r1= c1.calculateChocolates();
 		double r2= c2.Custom_Chocolate(25.0, 25.0, 25.0, 25.0);
+		delivery_Info(1000,"5 th avenue, New York","a");
     		System.out.println("Output for Method 1:"+r1+"\n");
 		System.out.println("Output for Method 2:"+r2+"\n");
     		in.close();
